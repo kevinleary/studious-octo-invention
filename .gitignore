@@ -1,0 +1,13 @@
+# Credentials
+creds.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# VS Code
+.DS_Store
+
+# Spyder project settings
+.spyderproject
+.spyproject
+spyder_crash.log
