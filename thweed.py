@@ -13,7 +13,10 @@ import logging
 import time
 from keys import consumer_key, consumer_secret, access_token , access_token_secret , bearer_token
 
-print(bearer_token)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret )
+auth.set_access_token(access_token, access_token_secret )
+api  = tweepy.API(auth)
+print(api.verify_credentials().screen_name)  
 
 # def create_api():
 #     consumer_key = os.getenv("CONSUMER_KEY")
@@ -35,17 +38,17 @@ print(bearer_token)
 
 #client = tweepy.Client(bearer_token=bearer_token)
 
-client = tweepy.Client(bearer_token, consumer_key, consumer_secret, access_token, access_token_secret)
+# client = tweepy.Client(bearer_token, consumer_key, consumer_secret, access_token, access_token_secret)
 
-client.create_tweet(text="This Tweet was Tweeted using Tweepy and Twitter API v2!")
+# client.create_tweet(text="This Tweet was Tweeted using Tweepy and Twitter API v2!")
 
 
-# api = tweepy.API(client)
-# print(api.verify_credentials().screen_name)
+# # api = tweepy.API(client)
+# # print(api.verify_credentials().screen_name)
 
-response = client.create_tweet(
-    text="This Tweet was Tweeted using Tweepy and Twitter API v2!")
-#print(f"https://twitter.com/user/status/{response.data['id']}")
+# response = client.create_tweet(
+#     text="This Tweet was Tweeted using Tweepy and Twitter API v2!")
+# #print(f"https://twitter.com/user/status/{response.data['id']}")
 
 
 
@@ -69,4 +72,6 @@ response = client.create_tweet(
     
     
 # def tweetme(tweet):
+    
+
         
